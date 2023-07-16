@@ -5,22 +5,22 @@
 class G < Formula
   desc ""
   homepage "https://katallaxie.github.io/g/"
-  version "0.0.1-alpha.3"
+  version "0.0.1-alpha.4"
 
   depends_on "go" => :optional
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.3/g_0.0.1-alpha.3_darwin_arm64.tar.gz"
-      sha256 "8c4928e9a7513e57cb3adbe49ef7c7152f22d0df2a21cbf440c229e1242e4e9e"
+      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.4/g_0.0.1-alpha.4_darwin_arm64.tar.gz"
+      sha256 "ef3dd5ad39c52dd2366c58cfe02095c1393c3ddfc1bb79d84fe2ddd6990bf990"
 
       def install
         bin.install "g"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.3/g_0.0.1-alpha.3_darwin_amd64.tar.gz"
-      sha256 "c3986e30cee932ddac2ccdb135088810311e4feb6f38d7c78a1d91e877a377b8"
+      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.4/g_0.0.1-alpha.4_darwin_amd64.tar.gz"
+      sha256 "e4a955b21fbd70c8fda9c4c3a998de041099acb2d12770558375bcb29e04552a"
 
       def install
         bin.install "g"
@@ -29,17 +29,17 @@ class G < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.3/g_0.0.1-alpha.3_linux_arm64.tar.gz"
-      sha256 "b37816b79065fa004b11b6cb49d57eb70ea8621edc65ebc92d9492326f9652b4"
+    if Hardware::CPU.intel?
+      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.4/g_0.0.1-alpha.4_linux_amd64.tar.gz"
+      sha256 "2e8b9b61e68288668d236f68412405d6646b43bfd0dbef549d1bd795ac515b98"
 
       def install
         bin.install "g"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.3/g_0.0.1-alpha.3_linux_amd64.tar.gz"
-      sha256 "01a0b9bc9581e3eafceb960109728c9d811acc94ba282e33efb5a7a3c7e008a5"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.4/g_0.0.1-alpha.4_linux_arm64.tar.gz"
+      sha256 "42270977550839ca3d580ac14ed169ceae4c6580bc63418154e919a46d29bafd"
 
       def install
         bin.install "g"
