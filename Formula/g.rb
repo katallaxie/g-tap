@@ -5,22 +5,22 @@
 class G < Formula
   desc ""
   homepage "https://katallaxie.github.io/g/"
-  version "0.0.1-alpha.2"
+  version "0.0.1-alpha.3"
 
   depends_on "go" => :optional
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.2/g_0.0.1-alpha.2_darwin_amd64.tar.gz"
-      sha256 "76ef03af0d5085b4c75ea29535a5a4ae0785af7a28168a67273a9ef2d9e839ee"
+    if Hardware::CPU.arm?
+      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.3/g_0.0.1-alpha.3_darwin_arm64.tar.gz"
+      sha256 "8c4928e9a7513e57cb3adbe49ef7c7152f22d0df2a21cbf440c229e1242e4e9e"
 
       def install
         bin.install "g"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.2/g_0.0.1-alpha.2_darwin_arm64.tar.gz"
-      sha256 "e9b0071c7efe30a8f0fa4f058c27e862462dd1d22101afebfe72bcc9b034f928"
+    if Hardware::CPU.intel?
+      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.3/g_0.0.1-alpha.3_darwin_amd64.tar.gz"
+      sha256 "c3986e30cee932ddac2ccdb135088810311e4feb6f38d7c78a1d91e877a377b8"
 
       def install
         bin.install "g"
@@ -29,17 +29,17 @@ class G < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.2/g_0.0.1-alpha.2_linux_amd64.tar.gz"
-      sha256 "6e12e8ad946d9e03621ea7fba6f90ebdd763c428b1df72a441c034cb2dc41b44"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.3/g_0.0.1-alpha.3_linux_arm64.tar.gz"
+      sha256 "b37816b79065fa004b11b6cb49d57eb70ea8621edc65ebc92d9492326f9652b4"
 
       def install
         bin.install "g"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.2/g_0.0.1-alpha.2_linux_arm64.tar.gz"
-      sha256 "6915e1c10734ca2bd0957bd0e5228ddb4de5024b7167b8b2c3541c3677c0cf35"
+    if Hardware::CPU.intel?
+      url "https://github.com/katallaxie/g/releases/download/v0.0.1-alpha.3/g_0.0.1-alpha.3_linux_amd64.tar.gz"
+      sha256 "01a0b9bc9581e3eafceb960109728c9d811acc94ba282e33efb5a7a3c7e008a5"
 
       def install
         bin.install "g"
